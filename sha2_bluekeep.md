@@ -207,7 +207,7 @@ Here is a possible output :
 ```powershell
 #TYPE System.Management.Automation.PSCustomObject
 "FullDomaineName","IPAddress","OSDescription","ErrorCode","LastReportedStatusTime","UpdateTitle","KB","ArrivalDate"
-"toto.ipfyx.fr","1.1.1.1","Windows 7","80070643","01/01/1970 00:00:00","Cumulative Security Update","4474333","01/01/1970 01:00:00"
+"toto.ipfyx.fr","1.1.1.1","Windows 7","80092004","01/01/1970 00:00:00","Cumulative Security Update","4474333","01/01/1970 01:00:00"
 ```
 ### Fixing the machines in error :
 
