@@ -18,7 +18,7 @@ If you’re using WSUS to patch your domain, I got something for you. Since WSUS
 
 SCCM is out of scope in this article but aleardy provides the necessary dashboard if you’re patching with it. It can be used alongside WSUS to quickly deploy a KB on you infrastructure.
 
-Here is an example, followed by a possible result and the script itself. You can also [download it](https://manwefm.github.io/wsus_computers_in_error.ps1).
+Here is an example, followed by a possible result and the script itself. You can also [download it](https://bl0g.ipfyx.fr/wsus_computers_in_error.ps1).
 
 ```powershell
 .\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 –ErrorCode 0x80092004 –CsvPath « .\computer_no_sha2_$(Get-Date –Format yyyy-MM-dd).csv
