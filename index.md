@@ -13,5 +13,4 @@ I am a cybersecurity engineer working at [CEA](http://www.cea.fr/). I like solvi
 
 Twitter | [manwefm](https://twitter.com/manwefm)
 Rootme | [ipfyx](https://www.root-me.org/ipfyx)
-Linkedin | [Soon](https://twitter.com/manwefm)
-Mail | [Soon](https://twitter.com/manwefm)
+Linkedin | [Link](https://www.linkedin.com/in/florian-martin-71538b131)
