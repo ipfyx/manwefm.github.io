@@ -1,6 +1,4 @@
-### Work in progress
-
-### Bluekeep, why would you still be vulnerable? SHA2 signing.
+##### Bluekeep, why would you still be vulnerable? SHA2 signing.
 
 Patch management is a pain, and the more obsolete the OS, the trickier it becomes. Windows 7 and 2008 R2 (Windows  6.1) are due to reach End Of Life (EOL) on 14 January 2020 (tomorrow at the time of this writing) but your computers may not have been patched since August 2019 if you haven’t been careful.
 
@@ -21,15 +19,15 @@ SCCM is out of scope in this article but aleardy provides the necessary dashboar
 
 Here is an example, followed by a possible result and the script itself :
 
-```markdown
+```powershell
 .\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 –ErrorCode 0x80092004 –CsvPath « .\computer_no_sha2_$(Get-Date –Format yyyy-MM-dd).csv »
 ```
 
-```markdown
+```powershell
 script
 ```
 
-```markdown
+```powershell
 #TYPE System.Management.Automation.PSCustomObject
 "FullDomaineName","IPAddress","OSDescription","ErrorCode","LastReportedStatusTime","UpdateTitle","KB","ArrivalDate"
 "toto.ipfyx.fr","1.1.1.1","Windows 7","80070643","01/01/1970 00:00:00","Cumulative Security Update","4474333","01/01/1970 01:00:00"
@@ -49,17 +47,8 @@ In the meantime, to fix this issue, you should install :
   
 ### Quick bonus :
 
-If you don’t specify any error code to the script, it will return every computer in error, whatever the error code. You can also use this script to diagnose your patch management. The CSV result could, for example, be put in splunk to build dashboard.
+If you don’t specify any error code to the script, it will return every computer in error, whatever the error code. You can therefore use this script to diagnose your patch management. The CSV result could, for example, be put in splunk to build dashboard.
 
-```markdown
+```powershell
 .\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 ––CsvPath « .\computer_in_error_$(Get-Date –Format yyyy-MM-dd).csv »
-```markdown
-
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/manwefm/manwefm.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
