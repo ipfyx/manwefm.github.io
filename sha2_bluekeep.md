@@ -1,11 +1,12 @@
 # Bluekeep, why would you still be vulnerable? SHA2 signing.
 
-Patch management is a pain, and the more obsolete the OS, the trickier it becomes. Windows 7 and 2008 R2 (Windows  6.1) are due to reach End Of Life (EOL) on 14 January 2020 (tomorrow at the time of this writing) but your computers may not have been patched since August 2019 if you haven’t been careful.
+Patch management is a pain, and the more obsolete the OS, the trickier it becomes. Windows 7 and 2008 R2 (Windows  6.1) are due to reach End Of Life (EOL) on **14 January 2020** (tomorrow at the time of this writing) but your computers may not have been patched since August 2019 if you haven’t been careful.
 
-Indeed, August 2019 was the last month where Microsoft KB were signed using SHA1. Since then, KBs are only signed using SHA2, but this hash function must be installed on Windows 6.1 in order for your computers and servers to install them. Otherwise they will fail with error code 0x80092004 (CRYPT_E_NOT_FOUND).
+Indeed, August 2019 was the last month where Microsoft KB were signed using SHA1. Since then, **KBs are only signed using SHA2**, but this hash function must be installed on Windows 6.1 in order for your computers and servers to install them. Otherwise they will fail with error code **0x80092004** (CRYPT_E_NOT_FOUND).
 
 Since Windows Server 2012R2, this hash function is already included so there is nothing to worry about for 2012R2, 2016 and 2019.
-Unfortunately, in August and September 2019, Bluekeep, a critical security vulnerability on Microsoft’s Remote Desktop Protocol, which allow s for the possibility of remote code execution as system, was released, and patched by Microsoft during those two months. Therefore, if some computers running Windows 6.1 were not up to date on August 2019, they are vulnerable to Bluekeep since September 2019. I hope it’s not your DC, or your WSUS…
+
+Unfortunately, in August and September 2019, **Bluekeep**, a critical security vulnerability on Microsoft’s Remote Desktop Protocol, which allow s for the possibility of remote code execution as system, was released, and patched by Microsoft during those two months. Therefore, if some computers running Windows 6.1 were not up to date on August 2019, they are vulnerable to Bluekeep since September 2019. I hope it’s not your DC, or your WSUS…
 
 But don’t panic, here is what you can do :
 -	Find the machines in error
@@ -205,7 +206,7 @@ $ComputersAffected.Values | Export-Csv -Encoding UTF8 -Path $CsvPath
 ```
 ### Fixing the machines in error :
 
-Indeed, Windows 6.1 is due to reach End Of Life (EOL) on 14 January 2020, so why bother ? Well, Bluekeep is such a critical vulnerability that you should not neglect. After that, you should hurry to upgrade your server to at least Windows 2012 R2, and you computers to Windows 10.
+Indeed, Windows 6.1 is due to reach End Of Life (EOL) on **14 January 2020**, so why bother ? Well, Bluekeep is such a critical vulnerability that you should not neglect. After that, you should hurry to upgrade your server to at least Windows 2012 R2, and you computers to Windows 10.
 
 In the meantime, to fix this issue, you should install : 
 
@@ -223,3 +224,5 @@ If you don’t specify any error code to the script, it will return every comput
 ```powershell
 .\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 ––CsvPath « .\computer_in_error_$(Get-Date –Format yyyy-MM-dd).csv
 ```
+
+I wish you good luck !  Any feedback will of course be greatly appreciated.
