@@ -209,14 +209,14 @@ Here is a possible output :
 ```
 ### Fixing the machines in error :
 
-Indeed, Windows 6.1 is due to reach End Of Life (EOL) on **14 January 2020**, so why bother ? Well, Bluekeep is such a critical vulnerability that you should not neglect. After that, you should hurry to upgrade your server to at least Windows 2012 R2, and you computers to Windows 10.
+Since Windows 6.1 is due to reach End Of Life (EOL) on **14 January 2020**, so why bother ? Well, Bluekeep is such a critical vulnerability that you should not neglect it. After that, you should hurry to upgrade your server to at least Windows 2012 R2, and you computers to Windows 10.
 
 In the meantime, to fix this issue, you should install : 
 
-- 2008R2 et 7 :
+- For Windows 2008R2 et Windows 7 :
   - KB 4474419 (cumulative security update from July 2019 or before, last KB signed using SHA1 for Windows 2008R2)
   - KB 4490628 (Stack update from March 2019)
-- 2008 :
+- For Windows 2008 :
   - KB 4474419 (cumulative security update from June 2019, last KB signed using SHA1 for Windows 2008)
   - KB 4493730 (Stack update from April 2019)
   
