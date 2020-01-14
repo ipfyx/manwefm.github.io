@@ -1,5 +1,7 @@
 # Bluekeep, why would you still be vulnerable? SHA2 signing.
 
+![Blueekeep](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/BlueKeep_logo.svg/1024px-BlueKeep_logo.svg.png)
+
 Patch management is a pain, and the more obsolete the OS, the trickier it becomes. Windows 7 and 2008 R2 (Windows  6.1) are due to reach End Of Life (EOL) on **14 January 2020** (tomorrow at the time of this writing) but your computers may not have been patched since August 2019 if you haven’t been careful.
 
 Indeed, August 2019 was the last month where Microsoft KB were signed using SHA1. Since then, **KBs are only signed using SHA2**, but this hash function must be installed on Windows 6.1 in order for your computers and servers to install them. Otherwise they will fail with error code **0x80092004** (CRYPT_E_NOT_FOUND).
