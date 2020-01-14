@@ -14,11 +14,13 @@ But don’t panic, here is what you can do :
 
 ### Finding the machines in error :
 
-If you’re using WSUS to patch your domain, I got something for you. Since WSUS Report Viewer is awfully slow and a pain to use, I developed a quick script using Powershell to retrieve every computer in error. This script must be run as Administrator on the WSUS server delivering the patch to the clients, it was only tested on WSUS running on Windows 2012R2 or later. The script only looks for computers in error and writes their names, the error codes and the KBs in failure in a CSV file.
+If you’re using WSUS to patch your domain, I got something for you. Since WSUS Report Viewer is awfully slow and a pain to use, I developed a quick script using Powershell to retrieve every computer in error. 
+
+This script must be run as Administrator on the WSUS server delivering the patch to the clients. It was only tested on WSUS running on at least Windows 2012R2. The script simply looks for computers in error according to wsus reports and writes their names, the error codes and the KBs in failure in a CSV file.
 
 SCCM is out of scope in this article but aleardy provides the necessary dashboard if you’re patching with it. It can be used alongside WSUS to quickly deploy a KB on you infrastructure.
 
-Here is an example, followed by a possible result and the script itself. You can also [download it](https://bl0g.ipfyx.fr/wsus_computers_in_error.ps1).
+Here is a quick usage, followed by a possible result and the script itself. You can also [download it](https://bl0g.ipfyx.fr/wsus_computers_in_error.ps1).
 
 ```powershell
 .\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 –ErrorCode 0x80092004 –CsvPath « .\computer_no_sha2_$(Get-Date –Format yyyy-MM-dd).csv
@@ -198,6 +200,7 @@ $ErrorMessages | ForEach-Object {
 $ComputersAffected.Values | Export-Csv -Encoding UTF8 -Path $CsvPath
 
 ```
+Here is a possible output :
 
 ```powershell
 #TYPE System.Management.Automation.PSCustomObject
