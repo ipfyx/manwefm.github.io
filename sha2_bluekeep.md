@@ -6,7 +6,7 @@ Indeed, August 2019 was the last month where Microsoft KB were signed using SHA1
 
 Since Windows Server 2012R2, this hash function is already included so there is nothing to worry about for 2012R2, 2016 and 2019.
 
-Unfortunately, in August and September 2019, **Bluekeep**, a critical security vulnerability on Microsoft’s Remote Desktop Protocol, which allow s for the possibility of remote code execution as system, was released, and patched by Microsoft during those two months. Therefore, if some computers running Windows 6.1 were not up to date on August 2019, they are vulnerable to Bluekeep since September 2019. I hope it’s not your DC, or your WSUS…
+Unfortunately, in August and September 2019, **Bluekeep**, a critical security vulnerability on Microsoft’s Remote Desktop Protocol, which allow s for the possibility of remote code execution as system, was released, and patched by Microsoft during those two months. *Therefore, if some computers running Windows 6.1 have not installed the SHA2 hash function before Septembre 2019, they have not been patched since then and are vulnerable to Bluekeep. I hope it’s not your DC, or your WSUS…*
 
 But don’t panic, here is what you can do :
 -	Find the machines in error
