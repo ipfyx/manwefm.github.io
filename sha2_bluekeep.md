@@ -20,7 +20,7 @@ SCCM is out of scope in this article but aleardy provides the necessary dashboar
 Here is an example, followed by a possible result and the script itself. You can also [download it](https://manwefm.github.io/wsus_computers_in_error.ps1).
 
 ```powershell
-.\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 –ErrorCode 0x80092004 –CsvPath « .\computer_no_sha2_$(Get-Date –Format yyyy-MM-dd).csv »
+.\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 –ErrorCode 0x80092004 –CsvPath « .\computer_no_sha2_$(Get-Date –Format yyyy-MM-dd).csv
 ```
 
 ```powershell
@@ -221,5 +221,5 @@ In the meantime, to fix this issue, you should install :
 If you don’t specify any error code to the script, it will return every computer in error, whatever the error code. You can therefore use this script to diagnose your patch management. The CSV result could, for example, be put in splunk to build dashboard.
 
 ```powershell
-.\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 ––CsvPath « .\computer_in_error_$(Get-Date –Format yyyy-MM-dd).csv »
+.\wsus_computers_in_error.ps1 –ServerName wsus.ipfyx.fr –ServerPort 8531 –RelativeTime -168 ––CsvPath « .\computer_in_error_$(Get-Date –Format yyyy-MM-dd).csv
 ```
